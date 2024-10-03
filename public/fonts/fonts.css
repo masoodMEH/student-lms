@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts//Vazirmatn-Black.woff2") format("woff2");
+}
+
+/* @font-face { */
+/* font-family: IRANYekan; */
+/* font-style: normal; */
+/* font-weight: bold; */
+/* src: url("../../public/fonts/IRANYekan.ttf"); */
+/* src: url("../../public/fonts/IRANYekan.ttf?#iefix") */
+/* format("embedded-opentype"), */
+/* IE6-8 url("../../public/fonts/IRANYekan.ttf") format("ttf"), */
+/* FF39+,Chrome36+, Opera24+*/
+/* url("../../public/fonts/IRANYekan.ttf") */
+/* format("ttf"), */
+/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+/* url("../../public/fonts/IRANYekan.ttf") */
+/* format("truetype"); */
+/* } */
+
+/* @font-face { */
+/* font-family: IRANSansWeb_Light;
+  font-style: normal;
+  font-weight: bold; */
+/* src: url("../../public/fonts/IRANSansWeb_Light.ttf");
+  src: url("../../public/fonts/IRANSansWeb_Light.ttf?#iefix") */
+/* format("embedded-opentype"), */
+/* IE6-8 */
+/* url("../../public/fonts/IRANSansWeb_Light.ttf") format("ttf"), */
+/* FF39+,Chrome36+, Opera24+*/
+/* url("../../public/fonts/IRANSansWeb_Light.ttf") format("ttf"), */
+/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+/* url("../../public/fonts/IRANSansWeb_Light.ttf") format("truetype"); */
+/* } */

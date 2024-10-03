@@ -1,5 +1,51 @@
 import type { Metadata } from "next";
+import { Figtree } from "next/font/google";
+import localFont from "next/font/local";
+
 import "./globals.css";
+
+const figtree = Figtree({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-figtree",
+});
+
+const yekanBakh = localFont({
+  src: [
+    {
+      path: "../../public/fonts/YekanBakh/YekanBakh-Thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/YekanBakh/YekanBakh-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/YekanBakh/YekanBakh-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/YekanBakh/YekanBakh-Medium.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/YekanBakh/YekanBakh-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/YekanBakh/YekanBakh-Fat.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-yekanbakh",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,10 +58,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl">
-      <body className="flex flex-col min-h-screen font-bold uppercase">
+    <html dir="rtl" className={`${figtree.variable} ${yekanBakh.variable}`}>
+      {/* <html lang="fa" dir="rtl" className={yekan.className}> */}
+      <body className="flex flex-col min-h-screen font-semibold uppercase">
         <header className="bg-gray-200 flex items-center justify-center h-20">
-          هدر
+          دوره معماری ری اکت
         </header>
         <div className="flex-1 flex justify-center items-center">
           {children}

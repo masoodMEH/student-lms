@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: IRANYekan;
   font-style: normal;
   font-weight: bold;
-  src: url("./fonts/IRANYekan.ttf");
-  src: url("./fonts/IRANYekan.ttf?#iefix") format("embedded-opentype"),
-    /* IE6-8 */ url("./fonts/IRANYekan.ttf") format("ttf"),
-    /* FF39+,Chrome36+, Opera24+*/ url("./fonts/IRANYekan.ttf") format("ttf"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./fonts/IRANYekan.ttf")
-      format("truetype");
+  src: url("../../public/fonts/IRANYekan.ttf");
+  src: url("../../public/fonts/IRANYekan.ttf?#iefix")
+      format("embedded-opentype"),
+    url("../../public/fonts/IRANYekan.ttf") format("ttf"),
+    url("../../public/fonts/IRANYekan.ttf") format("ttf"),
+    url("../../public/fonts/IRANYekan.ttf") format("truetype");
 }
 
 @font-face {
   font-family: IRANSansWeb_Light;
   font-style: normal;
   font-weight: bold;
-  src: url("./fonts/IRANSansWeb_Light.ttf");
-  src: url("./fonts/IRANSansWeb_Light.ttf?#iefix") format("embedded-opentype"),
-    /* IE6-8 */ url("./fonts/IRANSansWeb_Light.ttf") format("ttf"),
-    /* FF39+,Chrome36+, Opera24+*/ url("./fonts/IRANSansWeb_Light.ttf")
-      format("ttf"),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./fonts/IRANSansWeb_Light.ttf")
-      format("truetype");
+  src: url("../../public/fonts/IRANSansWeb_Light.ttf");
+  src: url("../../public/fonts/IRANSansWeb_Light.ttf?#iefix")
+      format("embedded-opentype"),
+    url("../../public/fonts/IRANSansWeb_Light.ttf") format("ttf"),
+    url("../../public/fonts/IRANSansWeb_Light.ttf") format("ttf"),
+    url("../../public/fonts/IRANSansWeb_Light.ttf") format("truetype");
+} */
+
+html {
+  font-family: var(--font-yekanbakh);
 }
 
-*,
-body {
-  font-family: IRANYekan;
+:lang(en) {
+  font-family: var(--font-figtree);
 }
