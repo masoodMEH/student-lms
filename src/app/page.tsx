@@ -1,7 +1,5 @@
-import { Colors } from "./_components/colors/colors";
-
 const page = () => {
-  return <Colors />;
+  return <div className="">صفحه اصلی</div>;
 };
 
 export default page;
