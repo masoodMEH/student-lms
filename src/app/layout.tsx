@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
 
-import { Footer } from "./_components/footer/footer";
-import { Header } from "./_components/header/header";
+import { Footer } from "./_components/footer";
+import { Header } from "./_components/header";
 
 import "./globals.css";
 
@@ -66,7 +66,7 @@ export default function RootLayout({
       className={`dark ${figtree.variable} ${yekanBakh.variable}`}
     >
       {/* <html lang="fa" dir="rtl" className={yekan.className}> */}
-      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-semibold bg-white text-base-100 dark:bg-base-100 dark:text-base-content">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-medium bg-white text-base-100 dark:bg-base-100 dark:text-base-content">
         <Header />
         <div className="flex-1 flex justify-center items-center">
           {children}
