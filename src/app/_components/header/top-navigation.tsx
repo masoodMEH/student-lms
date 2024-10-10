@@ -25,7 +25,7 @@ export const TopNavigation: React.FC = () => {
       {menuItems.map((item) => {
         const isActive = pathname === item.href;
         return (
-          <li key={`bavigation-${item.href}`}>
+          <li key={`navigation-${item.href}`}>
             <Link
               href={item.href}
               className={`dar:backfrop:hover:text-primary transition-colors pb-2 ${
