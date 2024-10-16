@@ -14,7 +14,7 @@ const sizeClasses: Record<Size, string> = {
 
 const shapeClasses: Record<ButtonShape, string> = {
   wide: "btn-wide",
-  full: "btn-full",
+  full: "btn-block",
   square: "btn-square",
   default: "",
 };
@@ -27,28 +27,29 @@ export const Button: React.FC<ButtonProps> = ({
   shape = "default",
   isLoading = false,
   loadingType = "spinner",
-  loadingText = "در حال ارسال درخواست...",
+  loadingText = "در حال ارسال درخواست",
   type = "button",
   isLink = false,
-  animatedIcon = false,
   children,
   className,
+  animatedIcon = false,
   ...rest
 }: ButtonProps) => {
   const classes = classNames(
-    "btn",
-    className,
-    { "btn-outline": isOutline },
-    { btnlink: isLink },
-    { "animated-icon": animatedIcon },
-    { "pointer-events-none opacity-80": isLoading },
-    { [`btn-${variant}`]: variant },
-    { [`${sizeClasses}`]: size },
-    { [`${shapeClasses[shape]}`]: shape }
+      "btn",
+      className,
+      { [`btn-${variant}`]: variant },
+      { [`${sizeClasses[size]}`]: size },
+      { "btn-outline": isOutline },
+      { "btn-link": isLink },
+      { [`${shapeClasses[shape]}`]: shape },
+      { "animated-icon": animatedIcon },
+      { "pointer-events-none opacity-80": isLoading }
   );
+
   return (
-    <button type={type} disabled={isDisabled} {...rest} className={classes}>
-      {isLoading ? loadingText : children}
-    </button>
+      <button type={type} disabled={isDisabled} className={classes} {...rest}>
+          {isLoading ? loadingText : children}
+      </button>
   );
 };

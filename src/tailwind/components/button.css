@@ -116,7 +116,7 @@
 
         @media (hover: hover) {
             &:hover {
-                @apply border-transparent bg-transparent underline;
+                @apply border-transparent bg-transparent no-underline;
             }
         }
     }

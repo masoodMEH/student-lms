@@ -18,7 +18,10 @@ const page = () => {
               کلاسبن می تونی بدون محدودیت به قله های بالاتر سعود کنی . ما همیشه
               هواتو داریم
             </p>
-            <Button variant="primary">دوره های نکست و ری اکت</Button>
+            <div className="mt-5 flex gap-4">
+              <Button variant="primary" size="large" shape="wide">دوره های ری اکت و نکست</Button>
+              <Button variant="neutral" size="large" shape="wide">مشاوره برنامه نویسی</Button>
+            </div>
             <Image
               src="/images/frameworks.png"
               width={412}
