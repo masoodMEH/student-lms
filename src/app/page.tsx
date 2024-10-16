@@ -18,7 +18,7 @@ const page = () => {
               کلاسبن می تونی بدون محدودیت به قله های بالاتر سعود کنی . ما همیشه
               هواتو داریم
             </p>
-            <Button>دوره های نکست و ری اکت</Button>
+            <Button variant="primary">دوره های نکست و ری اکت</Button>
             <Image
               src="/images/frameworks.png"
               width={412}
