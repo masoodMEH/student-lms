@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
 import classNames from "classnames";
-import React from "react";
-
 import { Size } from "../types/size.type";
 import { ButtonProps, ButtonShape } from "./button.types";
+import { Loading } from "../loading/loading";
 
 const sizeClasses: Record<Size, string> = {
   tiny: "btn-xs",
@@ -36,20 +35,21 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }: ButtonProps) => {
   const classes = classNames(
-      "btn",
-      className,
-      { [`btn-${variant}`]: variant },
-      { [`${sizeClasses[size]}`]: size },
-      { "btn-outline": isOutline },
-      { "btn-link": isLink },
-      { [`${shapeClasses[shape]}`]: shape },
-      { "animated-icon": animatedIcon },
-      { "pointer-events-none opacity-80": isLoading }
+    "btn",
+    className,
+    { [`btn-${variant}`]: variant },
+    { [`${sizeClasses[size]}`]: size },
+    { "btn-outline": isOutline },
+    { "btn-link": isLink },
+    { [`${shapeClasses[shape]}`]: shape },
+    { "animated-icon": animatedIcon },
+    { "pointer-events-none opacity-80": isLoading }
   );
 
   return (
-      <button type={type} disabled={isDisabled} className={classes} {...rest}>
-          {isLoading ? loadingText : children}
-      </button>
+    <button type={type} disabled={isDisabled} className={classes} {...rest}>
+      {isLoading && <Loading type={loadingType} />}
+      {isLoading ? loadingText : children}
+    </button>
   );
 };
