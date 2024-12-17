@@ -18,7 +18,7 @@ export const HomeHeroSection: React.FC = () => {
             کلاسبن می‌تونی بدون محدودیت به قله‌های بالاتر صعود کنی. ما همیشه
             هواتو داریم.
           </p>
-          <div className="mt-5 flex justify-center xl:justify-start gap-4">
+          <div className="mt-5 flex justify-center xl:justify-start gap-4 ">
             <Button variant="primary" size="large" className="animated-icon">
               دوره‌های ری‌اکت و نکست
               <IconArrowLeftFill fill="currentColor" />
