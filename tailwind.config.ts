@@ -1,6 +1,7 @@
 import { colord, extend } from "colord";
 import mixPlugin from "colord/plugins/mix";
 
+import lineClamp from "@tailwindcss/line-clamp";
 import type { Config } from "tailwindcss";
 
 extend([mixPlugin]);
@@ -60,6 +61,18 @@ const config: Config = {
       backgroundImage: {
         "hero-pattern": "url('/images/tile.svg')",
       },
+      lineClamp: {
+        7: "7",
+      },
+      animation: {
+        marquee: "marquee 10s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
     container: {
       center: true,
@@ -73,6 +86,6 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [lineClamp],
 };
 export default config;

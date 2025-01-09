@@ -1,6 +1,7 @@
 import { homeFeatures } from "@/data/home-features";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { CourseSummary } from "@/types/course-summary.interface";
+import BlogPostCardList from "./(blog)/_components/blog-post-card-list";
 import { CourseCardList } from "./(courses)/courses/_components/course-card-list";
 import { Button } from "./_components/button";
 import Feature from "./_components/feature/feature";
@@ -20,11 +21,7 @@ async function getNewestCourses(count: number): Promise<CourseSummary[]> {
 }
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`, {
-    next: {
-      revalidate: 24 * 60 * 60, //86400 seconds - 1 day,
-    },
-  });
+  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`);
   return res.json();
 }
 
@@ -49,6 +46,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
+
       <section className="container pt-20">
         <div className="text-center xl:text-right">
           <h2 className="text-xl font-extrabold">تازه ترین دوره های آموزشی</h2>
@@ -94,6 +92,29 @@ export default async function Home() {
             </Button>
           </div>
         </div>
+      </section>
+
+      <section className="container py-20">
+        <div className="flex flex-col xl:flex-row gap-4 justify-center xl:justify-between items-center">
+          <div className="text-center xl:text-right">
+            <h2 className="text-2xl font-extrabold">
+              تازه‌ترین مقاله‌های آموزشی
+            </h2>
+            <p className="mt-3 text-lg">
+              به رایگان، به‌روزترین مقاله‌های دنیای تکنولوژی رو در اختیارت
+              می‌ذاریم؛ چون پیشرفتت برامون مهمه!
+            </p>
+          </div>
+          <Button
+            variant="neutral"
+            className="font-semibold"
+            animatedIcon={true}
+          >
+            همه مقاله‌ها
+            <IconArrowLeftFill fill="currentColor" />
+          </Button>
+        </div>
+        <BlogPostCardList posts={newestBlogPosts} />
       </section>
     </>
   );

@@ -1,8 +1,8 @@
 export interface BlogPostSummary {
   title: string;
   slug: string;
-  postData: string;
-  thumbnailURL: string;
+  postDate: string;
+  thumbnailUrl: string;
   studyTime: number;
   numberOfViews: number;
   author: string;
