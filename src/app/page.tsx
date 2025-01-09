@@ -37,6 +37,8 @@ export default async function Home() {
     newestBlogPostsData,
   ]);
 
+  console.log(newestBlogPosts);
+
   return (
     <>
       <HomeHeroSection />
