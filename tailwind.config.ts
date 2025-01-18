@@ -1,8 +1,10 @@
+import type { Config } from "tailwindcss";
+
+import headlessui from "@headlessui/tailwindcss";
+import forms from "@tailwindcss/forms";
+import lineClamp from "@tailwindcss/line-clamp";
 import { colord, extend } from "colord";
 import mixPlugin from "colord/plugins/mix";
-
-import lineClamp from "@tailwindcss/line-clamp";
-import type { Config } from "tailwindcss";
 
 extend([mixPlugin]);
 
@@ -50,14 +52,22 @@ export const tailwindColors: { [key: string]: string } = {
 };
 
 const config: Config = {
+  corePlugins: {
+    preflight: true,
+  },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./node_modules/flyonui/dist/js/*.js",
   ],
   theme: {
-    colors: tailwindColors,
     extend: {
+      fontFamily: {
+        figtree: ["var(--font-figtree)", "sans-serif"],
+        yekan: ["var(--font-yekanbakh)", "sans-serif"],
+      },
+      colors: tailwindColors,
       backgroundImage: {
         "hero-pattern": "url('/images/tile.svg')",
       },
@@ -86,6 +96,6 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [lineClamp],
+  plugins: [lineClamp, forms, headlessui({ prefix: "ui" })],
 };
 export default config;

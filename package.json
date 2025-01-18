@@ -11,9 +11,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@headlessui/tailwindcss": "^0.2.1",
+    "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/line-clamp": "^0.4.4",
     "classnames": "^2.5.1",
     "colord": "^2.9.3",
+    "flyonui": "^1.3.0",
+    "framer-motion": "^11.16.4",
     "next": "14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

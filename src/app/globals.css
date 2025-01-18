@@ -4,30 +4,6 @@
 
 @import '../tailwind/components.css';
 
-/* @font-face {
-  font-family: IRANYekan;
-  font-style: normal;
-  font-weight: bold;
-  src: url("../../public/fonts/IRANYekan.ttf");
-  src: url("../../public/fonts/IRANYekan.ttf?#iefix")
-      format("embedded-opentype"),
-    url("../../public/fonts/IRANYekan.ttf") format("ttf"),
-    url("../../public/fonts/IRANYekan.ttf") format("ttf"),
-    url("../../public/fonts/IRANYekan.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: IRANSansWeb_Light;
-  font-style: normal;
-  font-weight: bold;
-  src: url("../../public/fonts/IRANSansWeb_Light.ttf");
-  src: url("../../public/fonts/IRANSansWeb_Light.ttf?#iefix")
-      format("embedded-opentype"),
-    url("../../public/fonts/IRANSansWeb_Light.ttf") format("ttf"),
-    url("../../public/fonts/IRANSansWeb_Light.ttf") format("ttf"),
-    url("../../public/fonts/IRANSansWeb_Light.ttf") format("truetype");
-} */
-
 html {
   font-family: var(--font-yekanbakh);
 }

@@ -1,40 +1,14 @@
 import { homeFeatures } from "@/data/home-features";
-import { BlogPostSummary } from "@/types/blog-post-summary.interface";
-import { CourseSummary } from "@/types/course-summary.interface";
-import BlogPostCardList from "./(blog)/_components/blog-post-card-list";
+import { Suspense } from "react";
+import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
 import { CourseCardList } from "./(courses)/courses/_components/course-card-list";
 import { Button } from "./_components/button";
 import Feature from "./_components/feature/feature";
 import { HomeHeroSection } from "./_components/home-hero-section/home-hero-section";
 import { IconArrowLeftFill } from "./_components/icons/icons";
-
-async function getNewestCourses(count: number): Promise<CourseSummary[]> {
-  const res = await fetch(
-    `https://api.classbon.com/api/courses/newest/${count}`,
-    {
-      next: {
-        revalidate: 24 * 60 * 60, //86400 seconds - 1 day,
-      },
-    }
-  );
-  return res.json();
-}
-
-async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`);
-  return res.json();
-}
+import Loading from "./loading";
 
 export default async function Home() {
-  const newestCoursesData = getNewestCourses(4);
-  const newestBlogPostsData = getNewestPosts(4);
-
-  const [newestCourses, newestBlogPosts] = await Promise.all([
-    newestCoursesData,
-    newestBlogPostsData,
-  ]);
-
-  console.log(newestBlogPosts);
 
   return (
     <>
@@ -52,7 +26,9 @@ export default async function Home() {
           <h2 className="text-xl font-extrabold">تازه ترین دوره های آموزشی</h2>
           <p>برای به روز ماندن ، یاد گرفتن نکنه های تازه ضروریه!</p>
         </div>
-        <CourseCardList courses={newestCourses} />
+        <Suspense fallback={<Loading />}>
+          <CourseCardList courses={[]} />
+        </Suspense>
       </section>
 
       <section className="px-2 my-40">
@@ -114,7 +90,9 @@ export default async function Home() {
             <IconArrowLeftFill fill="currentColor" />
           </Button>
         </div>
-        <BlogPostCardList posts={newestBlogPosts} />
+        <Suspense fallback={<Loading />}>
+          <BlogPostCardList posts={[]} />
+        </Suspense>
       </section>
     </>
   );

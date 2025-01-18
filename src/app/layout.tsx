@@ -66,7 +66,7 @@ export default function RootLayout({
       className={`dark ${figtree.variable} ${yekanBakh.variable}`}
     >
       {/* <html lang="fa" dir="rtl" className={yekan.className}> */}
-      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-medium bg-white text-base-100 dark:bg-base-100 dark:text-base-content">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-medium bg-white text-base-100 dark:bg-base-100 dark:text-base-content font-yekan">
         <Header />
         <main>{children}</main>
         <Footer />
