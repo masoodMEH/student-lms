@@ -6,7 +6,7 @@ import { Button } from "./_components/button";
 import Feature from "./_components/feature/feature";
 import { HomeHeroSection } from "./_components/home-hero-section/home-hero-section";
 import { IconArrowLeftFill } from "./_components/icons/icons";
-import Loading from "./loading";
+import { CardPlaceholder } from "./_components/placeholders";
 
 export default async function Home() {
 
@@ -26,7 +26,7 @@ export default async function Home() {
           <h2 className="text-xl font-extrabold">تازه ترین دوره های آموزشی</h2>
           <p>برای به روز ماندن ، یاد گرفتن نکنه های تازه ضروریه!</p>
         </div>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<CardPlaceholder count={4} className="mt-5" />}>
           <CourseCardList courses={[]} />
         </Suspense>
       </section>
@@ -90,7 +90,7 @@ export default async function Home() {
             <IconArrowLeftFill fill="currentColor" />
           </Button>
         </div>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<CardPlaceholder />}>
           <BlogPostCardList posts={[]} />
         </Suspense>
       </section>
