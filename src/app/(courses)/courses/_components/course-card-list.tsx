@@ -7,7 +7,7 @@ import { CourseCard } from "./course-card";
 export type CourseCardListProps = { courses: CourseSummary[]; };
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const res = await fetch(`${API_URL}/courses/newest/${count}`,
     {
       next: {
@@ -21,8 +21,7 @@ async function getNewestCourses(count: number): Promise<CourseSummary[]> {
 export const CourseCardList: React.FC<CourseCardListProps> = async () => {
   const newestCoursesData = await getNewestCourses(4);
 
-  const [newestCourses,
-  ] = await Promise.all([
+  await Promise.all([
     newestCoursesData,
   ]);
 

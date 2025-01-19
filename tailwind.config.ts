@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-import headlessui from "@headlessui/tailwindcss";
-import forms from "@tailwindcss/forms";
 import lineClamp from "@tailwindcss/line-clamp";
 import { colord, extend } from "colord";
 import mixPlugin from "colord/plugins/mix";
@@ -96,6 +94,6 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [lineClamp, forms, headlessui({ prefix: "ui" })],
+  plugins: [lineClamp],
 };
 export default config;

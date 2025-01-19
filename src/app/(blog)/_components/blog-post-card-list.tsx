@@ -7,7 +7,7 @@ import { BlogPostCard } from "./blog-post-card";
 export type BlogPostCardListProps = { posts: BlogPostSummary[] };
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const res = await fetch(`${API_URL}/blog/newest/${count}`,
     {
       next: {
@@ -21,7 +21,7 @@ async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
 export const BlogPostCardList: React.FC<BlogPostCardListProps> = async () => {
   const newestBlogPostsData = await getNewestPosts(4);
 
-  const [newestBlogPosts] = await Promise.all([
+  await Promise.all([
     newestBlogPostsData,
   ]);
 
