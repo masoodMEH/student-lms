@@ -1,9 +1,11 @@
-import { Badge } from "@/app/_components/badge";
-import { Price } from "@/app/_components/price/price";
-import { CourseSummary } from "@/types/course-summary.interface";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { Badge } from "@/app/_components/badge";
+import { Price } from "@/app/_components/price/price";
+
+import { CourseSummary } from "@/types/course-summary.interface";
 
 export type CourseCardProps = CourseSummary & {};
 
@@ -39,7 +41,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           <Price price={basePrice} />
         </div>
       </div>
-      <Link href={`/course/${slug}`} className="card-footer justify-center">
+      <Link href={`/courses/${slug}`} className="card-footer justify-center">
         مشاهده جزئیات دوره
       </Link>
     </div>
